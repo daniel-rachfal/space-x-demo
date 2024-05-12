@@ -1,7 +1,9 @@
+import Text from "@/components/text";
+
 export default function Home() {
   return (
     <>
-      <h1>Space X Demo</h1>
+      <Text.H1>Home</Text.H1>
     </>
   );
 }

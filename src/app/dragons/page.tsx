@@ -1,18 +1,12 @@
-import { getAllDragons } from "../../services/spacexapi";
+import DragonsContent from "@/components/dragons";
+import Text from "@/components/text";
 
 export default async function DragonsPage() {
-  const dragons = await getAllDragons();
-
   return (
     <>
-      <h1>Dragons</h1>
+      <Text.H1>Here be Dragons</Text.H1>
       <article>
-        {dragons.map((dragon) => (
-          <div key={dragon.id}>
-            <h2>{dragon.name}</h2>
-            <p>{dragon.description}</p>
-          </div>
-        ))}
+        <DragonsContent />
       </article>
     </>
   );

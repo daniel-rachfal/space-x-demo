@@ -4,6 +4,7 @@ export interface Dragon {
     id: string;
     name: string | null;
     description: string | null;
+    first_flight: string | null;
     // Add more properties as needed
 }
 

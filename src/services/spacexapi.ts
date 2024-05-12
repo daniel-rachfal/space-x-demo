@@ -1,6 +1,6 @@
 const BASE_URL = "https://api.spacexdata.com";
 
-interface Dragon {
+export interface Dragon {
     id: string;
     name: string | null;
     description: string | null;
@@ -17,7 +17,7 @@ export async function getAllDragons(): Promise<Dragon[]> {
     return res.json();
 }
 
-interface Launch {
+export interface Launch {
     id: string;
     name: string | null;
     date_utc: string | null;
@@ -29,7 +29,7 @@ interface Launch {
     // Add more properties as needed
 }
 
-export async function getAllLaunches(): Promise<Launch[]> {
+export async function getRecentLaunches(): Promise<Launch[]> {
     const body = JSON.stringify({
         query: {},
         options: {
@@ -60,8 +60,6 @@ export async function getAllLaunches(): Promise<Launch[]> {
     }
 
     const json = await res.json();
-
-    console.log(json.docs[0].rocket);
 
     return json.docs;
 }

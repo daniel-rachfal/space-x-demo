@@ -1,36 +1,24 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Space-x-demo
 
-## Getting Started
+This project has been created for a take home assignment. It uses the [SpaceX-API](https://github.com/r-spacex/SpaceX-API/tree/master) project to show some data about dragons and launches. The dragons functionality was wholly based on them being called Dragons.
 
-First, run the development server:
+This project is currently hosted using Vercel at https://space-x-demo-sepia.vercel.app/
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Dragons timeline using the DaisyUI timeline component.
+- Most recent launches, with information about the launch date, rocket launched and cost per launch.
+- Homepage outlining the purpose of the project
+- Footer to not get sued
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Key Notes
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+The project is split into three main folders - /app, /components and /services.
 
-## Learn More
+- The app folder is responsible for the pages and routing, with the page.tsx files aiming for minimal content.
+- The component folder is structured to group relevant sections and components together under folders and aims for minimal coupling.
+- The services folder is for requests to the SpaceX-API.
 
-To learn more about Next.js, take a look at the following resources:
+Maintainability is considered through decoupling components, things being re-used being made into their own components and self-contained code.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+If I was to do this project again, I'd probably pick two API endpoints that interact with each other to introduce a bit more complexity in terms of logic. Simliarly, I would likely create things that produce the need for managing state, such as a search option. Also, start with a linter config because 2 space indentation hurts.

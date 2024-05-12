@@ -8,6 +8,7 @@ This project is currently hosted using Vercel at https://space-x-demo-sepia.verc
 
 - Dragons timeline using the DaisyUI timeline component.
 - Most recent launches, with information about the launch date, rocket launched and cost per launch.
+- Mobile Responsive design
 - Homepage outlining the purpose of the project
 - Footer to not get sued
 

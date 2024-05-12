@@ -4,7 +4,7 @@ export default async function DragonsPage() {
   const dragons = await getAllDragons();
 
   return (
-    <main>
+    <>
       <h1>Dragons</h1>
       <article>
         {dragons.map((dragon) => (
@@ -14,6 +14,6 @@ export default async function DragonsPage() {
           </div>
         ))}
       </article>
-    </main>
+    </>
   );
 }

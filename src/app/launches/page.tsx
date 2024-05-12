@@ -1,4 +1,4 @@
-import { getAllLaunches } from "../services/spacexapi";
+import { getAllLaunches } from "../../services/spacexapi";
 
 export default async function DragonsPage() {
   const launches = await getAllLaunches();

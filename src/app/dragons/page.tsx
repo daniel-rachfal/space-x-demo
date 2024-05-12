@@ -1,4 +1,4 @@
-import { getAllDragons } from "../services/spacexapi";
+import { getAllDragons } from "../../services/spacexapi";
 
 export default async function DragonsPage() {
   const dragons = await getAllDragons();

@@ -1,3 +1,5 @@
+const BASE_URL = "https://api.spacexdata.com";
+
 interface Dragon {
     id: string;
     name: string | null;
@@ -6,7 +8,7 @@ interface Dragon {
 }
 
 export async function getAllDragons(): Promise<Dragon[]> {
-    const res = await fetch("https://api.spacexdata.com/v4/dragons");
+    const res = await fetch(`${BASE_URL}/v4/dragons`);
 
     if (!res.ok) {
         throw new Error("Failed to fetch dragons");
@@ -24,7 +26,7 @@ interface Launch {
 }
 
 export async function getAllLaunches(): Promise<Launch[]> {
-    const res = await fetch("https://api.spacexdata.com/v5/launches");
+    const res = await fetch(`${BASE_URL}/v5/launches`);
 
     if (!res.ok) {
         throw new Error("Failed to fetch launches");

@@ -22,15 +22,46 @@ interface Launch {
     name: string | null;
     date_utc: string | null;
     details: string | null;
+    rocket: {
+        name: string | null;
+        cost_per_launch: number | null;
+    };
     // Add more properties as needed
 }
 
 export async function getAllLaunches(): Promise<Launch[]> {
-    const res = await fetch(`${BASE_URL}/v5/launches`);
+    const body = JSON.stringify({
+        query: {},
+        options: {
+            sort: {
+                date_unix: 'desc'
+            },
+            populate: [
+                {
+                    path: 'rocket',
+                    select: ['name', 'cost_per_launch'],
+                }
+            ]
+        }
+    });
+
+    const options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: body,
+    }
+
+    const res = await fetch(`${BASE_URL}/v5/launches/query`, options);
 
     if (!res.ok) {
         throw new Error("Failed to fetch launches");
     }
 
-    return res.json();
+    const json = await res.json();
+
+    console.log(json.docs[0].rocket);
+
+    return json.docs;
 }

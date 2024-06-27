@@ -17,14 +17,16 @@ export default async function DragonsTimeline() {
             className={clsx(
               "mb-10 mx-2",
               `timeline-${index % 2 === 0 ? "start" : "end"}`,
-              `lg:text-${index % 2 === 0 ? "right" : "left"}`
+              `text-${index % 2 === 0 ? "right" : "left"}`
             )}
           >
             <time className="font-mono italic">
               First Flight: {dragon.first_flight}
             </time>
             <div className="text-lg font-black">{dragon.name}</div>
-            <span>{dragon.description}</span>
+            <span className={`text-${index % 2 === 0 ? "right" : "left"}`}>
+              {dragon.description}
+            </span>
           </div>
           <hr className="bg-violet-700" />
         </li>

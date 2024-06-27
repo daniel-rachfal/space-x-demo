@@ -7,7 +7,7 @@ This project is currently hosted using Vercel at https://space-x-demo-sepia.verc
 ## Features
 
 - Dragons timeline using the DaisyUI timeline component.
-- Most recent launches, with information about the launch date, rocket launched and cost per launch.
+- Launches, sorted from most recent with information about the launch date, rocket launched and cost per launch. Infinitely scrollable.
 - Mobile Responsive design
 - Homepage outlining the purpose of the project
 - Footer to not get sued
@@ -21,5 +21,3 @@ The project is split into three main folders - /app, /components and /services.
 - The services folder is for requests to the SpaceX-API.
 
 Maintainability is considered through decoupling components, things being re-used being made into their own components and self-contained code.
-
-If I was to do this project again, I'd probably pick two API endpoints that interact with each other to introduce a bit more complexity in terms of logic. Simliarly, I would likely create things that produce the need for managing state, such as a search option. Also, start with a linter config because 2 space indentation hurts.

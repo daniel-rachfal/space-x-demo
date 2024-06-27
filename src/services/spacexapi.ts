@@ -5,7 +5,6 @@ export interface Dragon {
     name: string | null;
     description: string | null;
     first_flight: string | null;
-    // Add more properties as needed
 }
 
 export async function getAllDragons(): Promise<Dragon[]> {
@@ -27,10 +26,9 @@ export interface Launch {
         name: string | null;
         cost_per_launch: number | null;
     };
-    // Add more properties as needed
 }
 
-export async function getRecentLaunches(): Promise<Launch[]> {
+export async function getLaunchesPaginated(page: number = 10): Promise<Launch[]> {
     const body = JSON.stringify({
         query: {},
         options: {
@@ -42,7 +40,9 @@ export async function getRecentLaunches(): Promise<Launch[]> {
                     path: 'rocket',
                     select: ['name', 'cost_per_launch'],
                 }
-            ]
+            ],
+            limit: 10,
+            page: page,
         }
     });
 
